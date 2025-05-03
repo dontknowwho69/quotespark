@@ -1,24 +1,98 @@
-# Compiled class file
-*.class
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QuoteSpark - Random Quote Generator</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ff758c, #ff7eb3);
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px;
+      margin: 0;
+    }
 
-# Log file
-*.log
+    header {
+      font-size: 2.5em;
+      font-weight: bold;
+      margin-bottom: 40px;
+      text-shadow: 2px 2px #00000033;
+    }
 
-# BlueJ files
-*.ctxt
+    .quote-box {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 30px;
+      margin: auto;
+      width: 90%;
+      max-width: 600px;
+      border-radius: 20px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+    h2 {
+      margin-bottom: 20px;
+    }
 
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
+    #quote {
+      font-size: 1.3em;
+      font-style: italic;
+      margin-bottom: 25px;
+    }
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-replay_pid*
+    button {
+      background: #fff;
+      color: #ff6a8a;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #ffe0e8;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+
+  <header>✨ QuoteSpark</header>
+
+  <div class="quote-box">
+    <h2>Random Quote Generator</h2>
+    <p id="quote">Click the button to get a quote!</p>
+    <button onclick="generateQuote()">Get Quote</button>
+  </div>
+
+  <footer>
+    © 2025 QuoteSpark. All rights reserved.
+  </footer>
+
+  <script>
+    const quotes = [
+      "The best way to get started is to quit talking and begin doing. – Walt Disney",
+      "Don’t let yesterday take up too much of today. – Will Rogers",
+      "It’s not whether you get knocked down, it’s whether you get up. – Vince Lombardi",
+      "If you are working on something exciting, it will keep you motivated. – Steve Jobs",
+      "Success is not in what you have, but who you are. – Bo Bennett"
+    ];
+
+    function generateQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      document.getElementById("quote").textContent = quotes[randomIndex];
+    }
+  </script>
+
+</body>
+</html>
